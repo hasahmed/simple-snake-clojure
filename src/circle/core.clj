@@ -8,10 +8,8 @@
       (proxy-super paintComponent g)
       (.setColor g Color/BLACK)
       (.fillOval g 150 100 200 200))
-    (.setColor g Color/RED)
-    (.fillOval g 150 100 200 200))
-  (getPreferredSize []
-                    (Dimension. 500 400))))
+    (getPreferredSize []
+      (Dimension. 500 400))))
 
 (defn -main [& _args]
   (let [frame (JFrame. "Black Circle")
