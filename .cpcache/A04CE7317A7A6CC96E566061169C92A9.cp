@@ -1,1 +1,1 @@
-test:src:/Users/hahmed/.m2/repository/org/clojure/clojure/1.12.4/clojure-1.12.4.jar:/Users/hahmed/.m2/repository/org/clojure/core.specs.alpha/0.4.74/core.specs.alpha-0.4.74.jar:/Users/hahmed/.m2/repository/org/clojure/spec.alpha/0.5.238/spec.alpha-0.5.238.jar
+test:/Users/hahmed/src/repos/other/simple-snake-clojure-cursive/src:/Users/hahmed/.m2/repository/org/clojure/clojure/1.11.1/clojure-1.11.1.jar:/Users/hahmed/.m2/repository/org/clojure/core.specs.alpha/0.2.62/core.specs.alpha-0.2.62.jar:/Users/hahmed/.m2/repository/org/clojure/spec.alpha/0.3.218/spec.alpha-0.3.218.jar
