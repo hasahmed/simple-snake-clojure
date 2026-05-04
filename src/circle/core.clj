@@ -24,7 +24,10 @@
     (.setDefaultCloseOperation frame JFrame/EXIT_ON_CLOSE)
     (.start (Timer. 75 (reify ActionListener
                  (actionPerformed [this actionEvent]
-                   :default
+                   ; TODO: Implement gameloop
+                   (.setBackground panel (rand-color))
+                   ;(.setColor g (rand-color))
+                   ;(.fillOval g 150 100 200 200)
                  ))))
     (.addKeyListener frame (proxy [KeyAdapter] []
                        (keyPressed [keyEvent]
