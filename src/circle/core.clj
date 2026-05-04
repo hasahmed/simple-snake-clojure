@@ -1,5 +1,6 @@
 (ns circle.core
-  (:import [javax.swing JFrame JPanel]
+  (:import (java.awt.event WindowEvent)
+           [javax.swing JFrame JPanel]
            [java.awt Color Graphics Dimension]))
 
 (defn make-panel []
@@ -17,6 +18,9 @@
     (.setBackground panel Color/WHITE)
     (.add (.getContentPane frame) panel)
     (.pack frame)
+    (print "Hello")
     (.setDefaultCloseOperation frame JFrame/EXIT_ON_CLOSE)
+    ;(.dispatchEvent frame (WindowEvent. frame WindowEvent/WINDOW_CLOSING))
+
     (.setLocationRelativeTo frame nil)
     (.setVisible frame true)))
