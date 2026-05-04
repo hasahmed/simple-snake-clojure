@@ -1,7 +1,10 @@
 (ns circle.core
-  (:import (java.awt.event ActionListener KeyListener)
+  (:import (java.awt.event ActionListener KeyAdapter KeyEvent KeyListener WindowEvent)
            [javax.swing JFrame JPanel Timer]
            [java.awt Color Graphics Dimension]))
+
+(defn rand-color [] (Color/getHSBColor (rand) (rand) (rand)))
+
 
 (defn make-panel []
   (proxy [JPanel] []
@@ -18,27 +21,17 @@
     (.setBackground panel Color/WHITE)
     (.add (.getContentPane frame) panel)
     (.pack frame)
-    (print "Hello")
     (.setDefaultCloseOperation frame JFrame/EXIT_ON_CLOSE)
     (.start (Timer. 75 (reify ActionListener
                  (actionPerformed [this actionEvent]
-                   ;(println "Goodbye")
-                   ;(println this)
-                   ;(println actionEvent)
+                   :default
                  ))))
-    (.addKeyListener frame (reify KeyListener
-                       (keyPressed [this keyEvent]
-                         (println keyEvent)
-                         )
-                       (keyReleased [this keyEvent]
-                         ;(println keyEvent)
-                         )
-                       (keyTyped [this keyEvent]
-                         :default
-                         ;(println keyEvent)
-                         )
-                             ))
-    ;(.dispatchEvent frame (WindowEvent. frame WindowEvent/WINDOW_CLOSING))
-
+    (.addKeyListener frame (proxy [KeyAdapter] []
+                       (keyPressed [keyEvent]
+                         (if (= (.getKeyCode keyEvent) KeyEvent/VK_ESCAPE)
+                           (.dispatchEvent frame (WindowEvent. frame WindowEvent/WINDOW_CLOSING)))
+                         (if (= (.getKeyCode keyEvent) KeyEvent/VK_SPACE)
+                           (.setBackground panel (rand-color)))
+                         )))
     (.setLocationRelativeTo frame nil)
     (.setVisible frame true)))
