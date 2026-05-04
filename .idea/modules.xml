@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/simple-snake-clojure.iml" filepath="$PROJECT_DIR$/simple-snake-clojure.iml" />
+      <module fileurl="file://$PROJECT_DIR$/simple-snake-clojure-cursive.iml" filepath="$PROJECT_DIR$/simple-snake-clojure-cursive.iml" />
     </modules>
   </component>
 </project>
