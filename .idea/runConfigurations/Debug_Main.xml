@@ -4,7 +4,7 @@
     <option name="displayName" value="Debug Main" />
     <option name="execution" value="DEPS" />
     <module name="simple-snake-clojure-cursive" />
-    <option name="options" value="-M:run" />
+    <option name="options" value="-M:run -Dsun.java2d.opengl=true" />
     <option name="profiles" />
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     <method v="2" />
